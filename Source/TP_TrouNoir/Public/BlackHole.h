@@ -30,11 +30,15 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	class UProjectileMovementComponent* ProjectileComponent;
 
-public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
+	class URadialForceComponent* RadialForceComponent;
 
-	UPROPERTY(EditDefaultsOnly)
-	float Speed;
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta = (AllowPrivateAccess))
+	UStaticMeshComponent* StaticMeshComponent;
+	
+public:
+
+	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly)
+	bool IsExploding;
 
 };
